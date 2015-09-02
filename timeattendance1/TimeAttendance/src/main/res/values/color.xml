@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="brown">#e7edee</color>
+    <color name="white">#ffffff</color>
+    <color name="blue">#0f72ed</color>
+    <color name="black">#000000</color>
+    <color name="btn_title">#3686e0</color>
+    <color name="red">#f20909</color>
+    <color name="bg_menu">#eeeeee</color>
+    <color name="bg_actionbar">#000000</color>
+    <color name="bg_black">#000000</color>
+    <color name="bg_white">#ffffff</color>
+    <color name="bg_title_add_project">#dadada</color>
+    <color name="text_title">#333333</color>
+    <color name="bg_add_project">#ebebeb</color>
+    <color name="border_project_item">#d2d2d2</color>
+    <color name="color_text_forgot_pass">#0004f0</color>
+    <color name="color_text_member_login">#888888</color>
+    <color name="bg_login">#d6dbe1</color>
+    <color name="login_bg_pressed">#ffbb33</color>
+    <!-- ===================================== -->
+    <color name="text_brown">#333333</color>
+    <color name="color_3079ec">#3079ec</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_4d8ffd">#4d8ffd</color>
+    <color name="color_777777">#777777</color>
+    <color name="color_bbbbbb">#bbbbbb</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_d0d0d0">#d0d0d0</color>
+    <color name="color_dddddd">#dddddd</color>
+    <color name="color_ec3044">#ec3044</color>
+    <color name="color_ececec">#ececec</color>
+    <color name="color_fd4d5d">#fd4d5d</color>
+    <color name="color_ffffff">#ffffff</color>
+    <color name="color_3fa9f5">#3fa9f5</color>
+    <color name="color_f5f5f5">#f5f5f5</color>
+    <color name="color_d6dbe1">#d6dbe1</color>
+    <color name="color_effafa">#effafa</color>
+
+</resources>

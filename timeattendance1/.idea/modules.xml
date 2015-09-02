@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TimeAttendance/TimeAttendance.iml" filepath="$PROJECT_DIR$/TimeAttendance/TimeAttendance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/googleplayservices_lib/googleplayservices_lib.iml" filepath="$PROJECT_DIR$/googleplayservices_lib/googleplayservices_lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/timeattendance1.iml" filepath="$PROJECT_DIR$/timeattendance1.iml" />
+    </modules>
+  </component>
+</project>

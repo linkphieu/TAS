@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.0"
+
+    defaultConfig {
+        applicationId "com.a2000.tas"
+        minSdkVersion 14
+        targetSdkVersion 22
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile project(':googleplayservices_lib')
+//    compile project(':OpenCVLibrary2410')
+    compile files('libs/android-support-v4.jar')
+//    compile files('libs/commons-net-3.3-sources.jar')
+    compile files('libs/commons-net-3.3.jar')
+    compile files('libs/javacpp.jar')
+    compile files('libs/javacv.jar')
+    compile files('libs/ksoap2-android-assembly-2.4-jar-with-dependencies.jar')
+    compile files('libs/librarygson_1_7.jar')
+}
