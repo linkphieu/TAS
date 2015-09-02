@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="btnClockIn"/>
+    <item name="btnOutLunch" type="id"/>
+    <item name="btnClockOut" type="id"/>
+    <item name="btnBackLunch" type="id"/>
+    <item name="currentDate" type="id"/>
+    
+</resources>

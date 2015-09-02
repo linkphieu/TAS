@@ -1,0 +1,3 @@
+//include ':OpenCVLibrary2410'
+include ':googleplayservices_lib'
+include ':TimeAttendance'

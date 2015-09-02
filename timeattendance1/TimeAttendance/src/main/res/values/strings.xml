@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TAS</string>
+    <string name="action_settings">Settings</string>
+    <string name="customer">Customer Pte Ltd</string>
+    <string name="staff_clock">STAFF CLOCK-IN</string>
+    <string name="clock_in">CLOCK IN</string>
+    <string name="out_lunch">OUT LUNCH</string>
+    <string name="back_lunch">BACK LUNCH</string>
+    <string name="clock_out">CLOCK OUT</string>
+    <string name="title_activity_clock">ClockActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="gps_network_not_enabled">Netword or GPS not enable</string>
+    <string name="open_location_settings">Open location setting</string>
+    <string name="Cancel">Cancel</string>
+    <string name="please_enter_pin_number_and_click_enter">Please enter "Pin number" and press "enter"</string>
+    <string name="title_activity_setting__preference">Setting_Preference</string>
+    <string name="welcome_">"Welcome: "</string>
+    <string name="you_have_successfully_">"You have successfully "</string>
+    <string name="at_">"At: "</string>
+    <string name="ok">OK</string>
+    <string name="employee_id_">"Please wait for recognition..."</string>
+    <string name="title_activity_galery_controller">GaleryController</string>
+    <string name="sync_data">Sync Data</string>
+    <string name="push_data">Push Data</string>
+    <string name="registration">Registration</string>
+    <string name="urlserver">Url Server</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="title_activity_registration">Registration</string>
+    <string name="id">PIN Code</string>
+    <string name="name">Employee Name</string>
+    <string name="phone">Phone No</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="submit">Submit</string>
+    <string name="skip">Skip</string>
+    <string name="title_activity_pincode">PincodeActivity</string>
+    <string name="you_must_to_clock_in_before_clock_out">You must to Clock in before Clock out</string>
+    <string name="title_activity_camera">CameraActivity</string>
+
+</resources>
