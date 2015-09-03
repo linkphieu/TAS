@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.a2000.tas.R;
 
@@ -24,12 +23,12 @@ import java.util.Date;
 
 import hanelsoft.vn.timeattendance.common.ConstCommon;
 import hanelsoft.vn.timeattendance.common.UtilsCommon;
-import hanelsoft.vn.timeattendance.model.helper.CameraPreview;
 import hanelsoft.vn.timeattendance.model.DAO.daoEmpClock;
 import hanelsoft.vn.timeattendance.model.entity.EmployeeClockEntity;
 import hanelsoft.vn.timeattendance.model.entity.EmployeeEntity;
 import hanelsoft.vn.timeattendance.model.entity.ProjectEntity;
 import hanelsoft.vn.timeattendance.model.entity.TimeSyncEntity;
+import hanelsoft.vn.timeattendance.model.helper.CameraPreview;
 import hanelsoft.vn.timeattendance.service.TimerService;
 
 @SuppressWarnings("deprecation")
@@ -130,12 +129,12 @@ public class HomeActivity extends Activity {
 
             @Override
             public void onClick(View arg0) {
-                daoEmpClock _daoEmpClock = new daoEmpClock();
-                _daoEmpClock = employeeClockEntity.getStatusByID(ConstCommon.daoEmpWhenPinCode.getID());
-                if (_daoEmpClock.getStatusClock() != null && _daoEmpClock.getStatusClock().length() > 0) {
-                    if (_daoEmpClock.getStatusClock().toUpperCase().equals(ConstCommon.STR_CLOCK_OUT)) {
-                        Toast.makeText(getBaseContext(), getResources().getString(R.string.you_must_to_clock_in_before_clock_out), Toast.LENGTH_LONG).show();
-                    } else {
+//                daoEmpClock _daoEmpClock = new daoEmpClock();
+//                _daoEmpClock = employeeClockEntity.getStatusByID(ConstCommon.daoEmpWhenPinCode.getID());
+//                if (_daoEmpClock.getStatusClock() != null && _daoEmpClock.getStatusClock().length() > 0) {
+//                    if (_daoEmpClock.getStatusClock().toUpperCase().equals(ConstCommon.STR_CLOCK_OUT)) {
+//                        Toast.makeText(getBaseContext(), getResources().getString(R.string.you_must_to_clock_in_before_clock_out), Toast.LENGTH_LONG).show();
+//                    } else {
                         ConstCommon.intent = new Intent(HomeActivity.this, ClockActivity.class);
                         ConstCommon.intent.putExtra("ACTION", 4);
                         UtilsCommon.isClickForResult = true;
@@ -143,10 +142,10 @@ public class HomeActivity extends Activity {
                         mCameraPreview.takePicture(HomeActivity.this);
                         btnClockOut.setBackgroundResource(R.drawable.greenbutton_unactiveted);
                         btnClockOut.setEnabled(false);
-                    }
-                } else {
-                    Toast.makeText(getBaseContext(), getResources().getString(R.string.you_must_to_clock_in_before_clock_out), Toast.LENGTH_LONG).show();
-                }
+//                   // }
+//                } else {
+//                    Toast.makeText(getBaseContext(), getResources().getString(R.string.you_must_to_clock_in_before_clock_out), Toast.LENGTH_LONG).show();
+//                }
             }
         });
         if (this.findFrontFacingCamera() != -1) {
