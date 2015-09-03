@@ -49,6 +49,7 @@ import java.util.Date;
 import hanelsoft.vn.timeattendance.common.ConstCommon;
 import hanelsoft.vn.timeattendance.common.RequestHelper;
 import hanelsoft.vn.timeattendance.common.UtilsCommon;
+import hanelsoft.vn.timeattendance.linkstech.helper.AppHelper;
 import hanelsoft.vn.timeattendance.model.DAO.DaoProjectLocation;
 import hanelsoft.vn.timeattendance.model.DAO.daoClock;
 import hanelsoft.vn.timeattendance.model.DAO.daoEmp;
@@ -390,6 +391,8 @@ public class PincodeActivity extends Activity {
                         AlertDialog alert = alertDialogBuilder.create();
                         alert.show();
                     }
+                }else {
+                    checkInternet();
                 }
                 break;
             case R.id.Registration:
@@ -406,7 +409,7 @@ public class PincodeActivity extends Activity {
     }
 
     private void loginAction(final String action) {
-        if (UtilsCommon.haveNetworkConnection(PincodeActivity.this)) {
+        if (AppHelper.isOnline(this)) {
             dialogLogin = new Dialog(PincodeActivity.this);
             final EditText UserName, Password;
 

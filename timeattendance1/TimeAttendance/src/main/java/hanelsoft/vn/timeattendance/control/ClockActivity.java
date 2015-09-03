@@ -351,11 +351,13 @@ public class ClockActivity extends Activity {
 
                         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                                 ClockActivity.this);
-                        TextView title = new TextView(ClockActivity.this);
-                        title.setGravity(Gravity.CENTER);
-                        title.setText("Are you sure to clock (Yes/No)?");
+//                        TextView title = new TextView(ClockActivity.this);
+//                        title.setGravity(Gravity.CENTER);
+//                        title.setText("Are you sure to clock (Yes/No)?");
+
                         alertDialogBuilder
-                                .setCustomTitle(title)
+                                .setTitle("Warning!")
+                                .setMessage("Are you sure to clock (Yes/No)?")
                                 .setCancelable(false)
                                 .setPositiveButton("Yes",
                                         new OnClickListener() {
@@ -552,7 +554,7 @@ public class ClockActivity extends Activity {
             entity.add(dao);
             String nameAction = "";
             if (ConstCommon.action == 1) {
-                nameAction = "Clock in is done! Thank you! Have a nice day!";
+                nameAction = "Clock in successfully!";
                 daoEmpClock _dao = new daoEmpClock(
                         ConstCommon.daoEmpWhenPinCode.getID(),
                         ConstCommon.STR_CLOCK_IN, "", dao.getProjectID(),
@@ -564,7 +566,7 @@ public class ClockActivity extends Activity {
             } else if (ConstCommon.action == 3) {
                 nameAction = "Back from lunch is done! Thank you! Have a nice day!";
             } else if (ConstCommon.action == 4) {
-                nameAction = "Clock out is done! Thank you! Have a nice day!";
+                nameAction = "Clock out successfully!";
                 daoEmpClock _dao = new daoEmpClock(
                         ConstCommon.daoEmpWhenPinCode.getID(),
                         ConstCommon.STR_CLOCK_OUT, "", dao.getProjectID(),
@@ -654,7 +656,7 @@ public class ClockActivity extends Activity {
             try {
                 JSONArray job = new JSONArray(str);
                 JSONObject obj = job.getJSONObject(0);
-                String success = obj.getString("Success");
+                String success = obj.getString("Status");
                 if (success.equals("1")) {
                     progressDialog.dismiss();
                     AlertDialog.Builder alertDlg = new AlertDialog.Builder(ClockActivity.this);

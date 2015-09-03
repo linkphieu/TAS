@@ -1,15 +1,15 @@
 package hanelsoft.vn.timeattendance.model.helper;
 
+import android.content.Context;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-
-import android.content.Context;
-import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
 	/*----------- Class la viec truc tiep voi db thuc hien cac phuong thuc view, cap nhat dl trong db ------------*/
@@ -44,7 +44,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private boolean checkDataBase() {
 		File dbFile = new File(DBDefinition.DB_PATH
 				+ DBDefinition.DATABASE_NAME);
-		// Log.v("dbFile", dbFile + "   "+ dbFile.exists());
 		return dbFile.exists();
 	}
 
@@ -63,11 +62,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		mOutput.close();
 		mInput.close();
 	}
-
-	// Open the database, so we can query it
 	public boolean openDataBase() throws SQLException {
 		String mPath = DBDefinition.DB_PATH + DBDefinition.DATABASE_NAME;
-		// Log.v("mPath", mPath);
 		mDataBase = SQLiteDatabase.openDatabase(mPath, null,
 				SQLiteDatabase.CREATE_IF_NECESSARY);
 		// mDataBase = SQLiteDatabase.openDatabase(mPath, null,

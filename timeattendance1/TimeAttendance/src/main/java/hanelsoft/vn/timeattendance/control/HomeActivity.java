@@ -2,13 +2,11 @@ package hanelsoft.vn.timeattendance.control;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Dialog;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.hardware.Camera;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -21,20 +19,18 @@ import android.widget.Toast;
 
 import com.a2000.tas.R;
 
-import java.io.File;
-import java.io.FilenameFilter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import hanelsoft.vn.timeattendance.common.ConstCommon;
 import hanelsoft.vn.timeattendance.common.UtilsCommon;
+import hanelsoft.vn.timeattendance.linkstech.helper.CameraPreview;
 import hanelsoft.vn.timeattendance.model.DAO.daoEmpClock;
 import hanelsoft.vn.timeattendance.model.entity.EmployeeClockEntity;
 import hanelsoft.vn.timeattendance.model.entity.EmployeeEntity;
 import hanelsoft.vn.timeattendance.model.entity.ProjectEntity;
 import hanelsoft.vn.timeattendance.model.entity.TimeSyncEntity;
 import hanelsoft.vn.timeattendance.service.TimerService;
-import hanelsoft.vn.timeattendance.view.CameraPreview;
 
 @SuppressWarnings("deprecation")
 public class HomeActivity extends Activity {
@@ -145,7 +141,6 @@ public class HomeActivity extends Activity {
                         UtilsCommon.isClickForResult = true;
                         UtilsCommon.isCheckedForResult = false;
                         mCameraPreview.takePicture(HomeActivity.this);
-//                        releaseCamera();
                         btnClockOut.setBackgroundResource(R.drawable.greenbutton_unactiveted);
                         btnClockOut.setEnabled(false);
                     }
@@ -181,7 +176,6 @@ public class HomeActivity extends Activity {
 
         ConstCommon.PROJECT_IS_SKIP = false;
         ConstCommon.PROJECT_SKIP = "FALSE";
-        // Start Service Timer
         serviceIntent = new Intent(this, TimerService.class);
         startService(serviceIntent);
     }
@@ -192,7 +186,6 @@ public class HomeActivity extends Activity {
         try {
             camera = Camera.open(this.findBackFacingCamera());
         } catch (Exception e) {
-            // cannot get camera or does not exist
         }
         return camera;
     }
@@ -252,41 +245,57 @@ public class HomeActivity extends Activity {
 
     @SuppressLint("InflateParams")
     private void showDialogToNotifySkip() {
-        File root = new File(mPath);
-        FilenameFilter pngFilter = new FilenameFilter() {
-            @SuppressLint("DefaultLocale")
-            public boolean accept(File dir, String name) {
-                return name.toLowerCase().endsWith(".jpg");
-            }
+//        File root = new File(mPath);
+//        FilenameFilter pngFilter = new FilenameFilter() {
+//            @SuppressLint("DefaultLocale")
+//            public boolean accept(File dir, String name) {
+//                return name.toLowerCase().endsWith(".jpg");
+//            }
+//
+//            ;
+//        };
+//        File[] imageFiles = root.listFiles(pngFilter);
+//        File imgFile = null;
+//        if (imageFiles != null && imageFiles.length > 0) {
+//            imgFile = new File(imageFiles[0].toString());
+//        }
 
-            ;
-        };
-        File[] imageFiles = root.listFiles(pngFilter);
-        File imgFile = null;
-        if (imageFiles != null && imageFiles.length > 0) {
-            imgFile = new File(imageFiles[0].toString());
-        }
+//        final Dialog dialogSkip = new Dialog(this);
+//        dialogSkip.setContentView(R.layout.dialog_show_skip);
+//        dialogSkip.setTitle(Html.fromHtml("<font size=\"6\" >Welcome</font>"));
+//        TextView text = (TextView) dialogSkip.findViewById(R.id.tvName);
+//        text.setText(ConstCommon.daoEmpWhenPinCode.getNameEmp());
+////        //ImageView image = (ImageView) dialogSkip.findViewById(R.id.imgAvata);
+////        if (imgFile != null && imgFile.exists()) {
+////            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+////            ConstCommon.bitMapImageWhenSkip = myBitmap;
+////            //image.setImageBitmap(myBitmap);
+////        }
+//
+//        Button dialogButton = (Button) dialogSkip.findViewById(R.id.btnConfirm);
+//        dialogButton.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dialogSkip.dismiss();
+//            }
+//        });
+//        dialogSkip.show();
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder
+                .setTitle("Welcome")
+                .setMessage(ConstCommon.daoEmpWhenPinCode.getNameEmp())
+                .setCancelable(false)
+                .setNegativeButton("OK", new DialogInterface.OnClickListener() {
 
-        final Dialog dialogSkip = new Dialog(this);
-        dialogSkip.setContentView(R.layout.dialog_show_skip);
-        dialogSkip.setTitle(Html.fromHtml("<font size=\"6\" >Welcome</font>"));
-        TextView text = (TextView) dialogSkip.findViewById(R.id.tvName);
-        text.setText(ConstCommon.daoEmpWhenPinCode.getNameEmp());
-        //ImageView image = (ImageView) dialogSkip.findViewById(R.id.imgAvata);
-        if (imgFile != null && imgFile.exists()) {
-            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-            ConstCommon.bitMapImageWhenSkip = myBitmap;
-            //image.setImageBitmap(myBitmap);
-        }
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // TODO Auto-generated method stub
 
-        Button dialogButton = (Button) dialogSkip.findViewById(R.id.btnConfirm);
-        dialogButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialogSkip.dismiss();
-            }
-        });
-        dialogSkip.show();
+                    }
+                });
+
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
 
     }
 

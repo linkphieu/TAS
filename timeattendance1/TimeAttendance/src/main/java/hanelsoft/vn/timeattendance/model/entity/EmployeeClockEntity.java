@@ -1,15 +1,15 @@
 package hanelsoft.vn.timeattendance.model.entity;
 
-import hanelsoft.vn.timeattendance.common.UtilsCommon;
-import hanelsoft.vn.timeattendance.model.DAO.daoEmpClock;
-import hanelsoft.vn.timeattendance.model.helper.DBDefinition;
-
-import java.util.ArrayList;
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+
+import java.util.ArrayList;
+
+import hanelsoft.vn.timeattendance.common.UtilsCommon;
+import hanelsoft.vn.timeattendance.model.DAO.daoEmpClock;
+import hanelsoft.vn.timeattendance.model.helper.DBDefinition;
 
 @SuppressLint("DefaultLocale")
 public class EmployeeClockEntity extends BaseEntity {
@@ -29,7 +29,6 @@ public class EmployeeClockEntity extends BaseEntity {
 					act.getStatusClock());
 			values.put(DBDefinition.COLUMN_EMPLOYEE_CLOCK_DATE,
 					UtilsCommon.getCurrentDate());
-
 			values.put(DBDefinition.COLUMN_EMPLOYEE_CLOCK_PROJECT_ID,
 					act.getProjectId());
 			values.put(DBDefinition.COLUMN_EMPLOYEE_CLOCK_PROJECT_NAME,
