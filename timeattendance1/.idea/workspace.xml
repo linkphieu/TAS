@@ -60,11 +60,11 @@
             <state vertical-scroll-proportion="1.1370968">
               <caret line="287" column="38" selection-start-line="287" selection-start-column="38" selection-end-line="287" selection-end-column="38" />
               <folding>
-                <element signature="e#1206#1238#0" expanded="true" />
-                <element signature="e#6190#6262#0" expanded="true" />
-                <element signature="e#6929#7001#0" expanded="true" />
-                <element signature="e#12008#12255#0" expanded="true" />
-                <element signature="e#12254#12255#0" expanded="true" />
+                <element signature="e#1202#1234#0" expanded="true" />
+                <element signature="e#6186#6258#0" expanded="true" />
+                <element signature="e#6925#6997#0" expanded="true" />
+                <element signature="e#12004#12251#0" expanded="true" />
+                <element signature="e#12250#12251#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2217,6 +2217,7 @@
         <option value="$PROJECT_DIR$/TimeAttendance/src/main/java/hanelsoft/vn/timeattendance/control/PincodeActivity.java" />
         <option value="$PROJECT_DIR$/TimeAttendance/src/main/java/hanelsoft/vn/timeattendance/control/ClockActivity.java" />
         <option value="$PROJECT_DIR$/TimeAttendance/src/main/java/hanelsoft/vn/timeattendance/control/HomeActivity.java" />
+        <option value="$PROJECT_DIR$/TimeAttendance/src/main/java/hanelsoft/vn/timeattendance/model/helper/CameraPreview.java" />
       </list>
     </option>
   </component>
@@ -2720,14 +2721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TimeAttendance/src/main/java/hanelsoft/vn/timeattendance/linkstech/helper/CameraPreview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TimeAttendance/src/main/java/hanelsoft/vn/timeattendance/linkstech/helper/ImageHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -2961,16 +2954,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TimeAttendance/src/main/java/hanelsoft/vn/timeattendance/model/helper/CameraPreview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1827957">
+          <caret line="94" column="43" selection-start-line="94" selection-start-column="43" selection-end-line="94" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TimeAttendance/src/main/java/hanelsoft/vn/timeattendance/control/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1370968">
           <caret line="287" column="38" selection-start-line="287" selection-start-column="38" selection-end-line="287" selection-end-column="38" />
           <folding>
-            <element signature="e#1206#1238#0" expanded="true" />
-            <element signature="e#6190#6262#0" expanded="true" />
-            <element signature="e#6929#7001#0" expanded="true" />
-            <element signature="e#12008#12255#0" expanded="true" />
-            <element signature="e#12254#12255#0" expanded="true" />
+            <element signature="e#1202#1234#0" expanded="true" />
+            <element signature="e#6186#6258#0" expanded="true" />
+            <element signature="e#6925#6997#0" expanded="true" />
+            <element signature="e#12004#12251#0" expanded="true" />
+            <element signature="e#12250#12251#0" expanded="true" />
           </folding>
         </state>
       </provider>

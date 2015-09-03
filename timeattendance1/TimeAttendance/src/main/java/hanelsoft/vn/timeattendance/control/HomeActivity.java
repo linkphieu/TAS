@@ -24,7 +24,7 @@ import java.util.Date;
 
 import hanelsoft.vn.timeattendance.common.ConstCommon;
 import hanelsoft.vn.timeattendance.common.UtilsCommon;
-import hanelsoft.vn.timeattendance.linkstech.helper.CameraPreview;
+import hanelsoft.vn.timeattendance.model.helper.CameraPreview;
 import hanelsoft.vn.timeattendance.model.DAO.daoEmpClock;
 import hanelsoft.vn.timeattendance.model.entity.EmployeeClockEntity;
 import hanelsoft.vn.timeattendance.model.entity.EmployeeEntity;

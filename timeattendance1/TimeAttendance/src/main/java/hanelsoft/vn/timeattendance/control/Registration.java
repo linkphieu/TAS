@@ -39,7 +39,7 @@ import hanelsoft.vn.timeattendance.model.DAO.daoEmp;
 import hanelsoft.vn.timeattendance.model.entity.EmployeeEntity;
 import hanelsoft.vn.timeattendance.model.helper.DatabaseHandler;
 import hanelsoft.vn.timeattendance.model.helper.FileHelper;
-import hanelsoft.vn.timeattendance.linkstech.helper.CameraPreview;
+import hanelsoft.vn.timeattendance.model.helper.CameraPreview;
 
 @SuppressWarnings("deprecation")
 public class Registration extends Activity {

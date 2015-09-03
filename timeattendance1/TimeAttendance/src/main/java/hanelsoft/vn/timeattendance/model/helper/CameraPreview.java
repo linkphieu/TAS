@@ -1,4 +1,4 @@
-package hanelsoft.vn.timeattendance.linkstech.helper;
+package hanelsoft.vn.timeattendance.model.helper;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -14,6 +14,7 @@ import java.io.IOException;
 
 import hanelsoft.vn.timeattendance.common.ConstCommon;
 import hanelsoft.vn.timeattendance.common.servicenetwork.ultis.FileUtil;
+import hanelsoft.vn.timeattendance.linkstech.helper.ImageHelper;
 
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
     private SurfaceHolder mSurfaceHolder;
