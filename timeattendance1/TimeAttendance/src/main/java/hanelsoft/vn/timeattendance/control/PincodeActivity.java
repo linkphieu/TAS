@@ -292,7 +292,6 @@ public class PincodeActivity extends Activity {
                     exit = false;
                 }
             }, 3 * 1000);
-
         }
 
     }

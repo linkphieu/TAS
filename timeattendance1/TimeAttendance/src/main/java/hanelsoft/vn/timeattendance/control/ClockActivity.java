@@ -534,14 +534,18 @@ public class ClockActivity extends Activity {
             AsyncCallWS task = new AsyncCallWS();
             task.execute();
         } else {
-            //
             ArrayList<daoProject> arrProj = new ArrayList<daoProject>();
             ProjectEntity projectEnt = new ProjectEntity(ClockActivity.this);
             arrProj = projectEnt.getByID(ConstCommon.ProjectID);
-            daoClock dao = new daoClock();
+            daoClock dao;
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             String currentDateandTime = sdf.format(new Date());
             TimesheetEntity entity = new TimesheetEntity(ClockActivity.this);
+            dao = entity.getLastClockByEmID(Integer.parseInt(ConstCommon.EmID));
+            if (dao.getAction().equals("1")) {
+                dao.setAction("2");
+                entity.add(dao);
+            }
             dao.setEmployeeID(Integer.parseInt(ConstCommon.EmID));
             dao.setLat(ConstCommon.latitude);
             dao.setLng(ConstCommon.longitude);
@@ -613,7 +617,6 @@ public class ClockActivity extends Activity {
             });
         }
     }
-
     void setFinish() {
         ConstCommon.PROJECT_IS_SKIP = false;
         ConstCommon.PROJECT_SKIP = "FALSE";
@@ -664,6 +667,11 @@ public class ClockActivity extends Activity {
                     String nameAction = "";
                     if (ConstCommon.action == 1) {
                         nameAction = "Clock in successfully!";
+                        daoEmpClock _daoEmpClock = employeeClockEntity.getStatusByID(ConstCommon.daoEmpWhenPinCode.getID());
+                        if (_daoEmpClock.getStatusClock() != null && _daoEmpClock.getStatusClock().length() > 0) {
+                            _daoEmpClock.setStatusClock(ConstCommon.STR_CLOCK_OUT);
+                            employeeClockEntity.add(_daoEmpClock);
+                        }
                         daoEmpClock _dao = new daoEmpClock(
                                 ConstCommon.daoEmpWhenPinCode.getID(),
                                 ConstCommon.STR_CLOCK_IN, "",
@@ -688,8 +696,7 @@ public class ClockActivity extends Activity {
                                 mDaoProject.getLocationY());
                         employeeClockEntity.add(_dao);
                     }
-                    SimpleDateFormat sdf = new SimpleDateFormat(
-                            "yyyy-MM-dd HH:mm:ss");
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     String currentDateandTime = sdf.format(new Date());
                     final Dialog dialogInformation = new Dialog(
                             ClockActivity.this);
@@ -738,7 +745,7 @@ public class ClockActivity extends Activity {
                     progressDialog.dismiss();
                     AlertDialog.Builder alertDlg = new AlertDialog.Builder(
                             ClockActivity.this);
-                    alertDlg.setMessage("Clock fail")
+                    alertDlg.setMessage(obj.getString("Message"))
 
                             .setPositiveButton("OK",
                                     new DialogInterface.OnClickListener() {
